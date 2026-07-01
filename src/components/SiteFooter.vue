@@ -26,9 +26,9 @@ const columns: FooterColumn[] = [
 
       { label: '句龙 Core', href: '#', icon: 'cube-core' },
 
-      { label: '文衡（主内）', href: '#' },
+      { label: '句龙 · 文衡', href: 'https://wenheng.goulong-ai.cn/' },
 
-      { label: '照胆（主外）', href: '#' },
+      { label: '句龙 · 照胆', href: 'https://zhaodan.goulong-ai.cn/' },
 
       { label: '负面清单引擎', href: '#', icon: 'shield-error' },
 
