@@ -24,13 +24,12 @@ const columns: FooterColumn[] = [
 
     links: [
 
-      { label: '句龙 Core', href: '#', icon: 'cube-core' },
+      { label: '句龙 · 枢衡', href: '#', icon: 'cube-core' },
 
       { label: '句龙 · 文衡', href: 'https://wenheng.goulong-ai.cn/' },
 
       { label: '句龙 · 照胆', href: 'https://zhaodan.goulong-ai.cn/' },
 
-      { label: '负面清单引擎', href: '#', icon: 'shield-error' },
 
       { label: 'Skill / MCP / CLI', href: '#', icon: 'layers' },
 
