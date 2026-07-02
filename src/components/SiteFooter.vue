@@ -10,7 +10,7 @@ interface FooterColumn {
 
   title: string
 
-  links: { label: string; href: string; icon?: string }[]
+  links: { label: string; href: string; icon?: string; disabled?: boolean }[]
 
 }
 
@@ -24,14 +24,11 @@ const columns: FooterColumn[] = [
 
     links: [
 
-      { label: '句龙 · 枢衡', href: '#', icon: 'cube-core' },
+      { label: '产品体系总览', href: '/products' },
 
-      { label: '句龙 · 文衡', href: 'https://wenheng.goulong-ai.cn/' },
+      { label: '句龙 · 文衡', href: 'https://wenheng.goulong-ai.cn' },
 
-      { label: '句龙 · 照胆', href: 'https://zhaodan.goulong-ai.cn/' },
-
-
-      { label: 'Skill / MCP / CLI', href: '#', icon: 'layers' },
+      { label: '句龙 · 照胆', href: 'https://zhaodan.goulong-ai.cn' },
 
     ],
 
@@ -43,15 +40,15 @@ const columns: FooterColumn[] = [
 
     links: [
 
-      { label: '快速开始', href: '#' },
+      { label: '快速开始', href: '/developers#quick-start', icon: 'zap' },
 
-      { label: 'API 文档', href: '#', icon: 'code' },
+      { label: 'API文档', href: '/developers#api', icon: 'code' },
 
-      { label: 'MCP 文档', href: '#' },
+      { label: 'MCP文档', href: '/developers#mcp', icon: 'layers' },
 
-      { label: 'CLI 指南', href: '#', icon: 'terminal' },
+      { label: 'CLI指南', href: '/developers#cli', icon: 'terminal' },
 
-      { label: '示例与 SDK', href: '#' },
+      { label: '示例与SDK', href: '/developers#examples-sdk', icon: 'cube-deploy' },
 
     ],
 
@@ -63,15 +60,15 @@ const columns: FooterColumn[] = [
 
     links: [
 
-      { label: '部署方案', href: '#' },
+      { label: '云端托管方案', href: '#contact' },
 
-      { label: '本地化部署', href: '#', icon: 'cube-server' },
+      { label: '本地部署暂未开放', href: '#', icon: 'cube-server', disabled: true },
 
-      { label: '安全合规', href: '#', icon: 'shield-check' },
+      { label: '后续开放咨询服务', href: '#', icon: 'calendar', disabled: true },
 
-      { label: '服务支持', href: '#' },
+      { label: '安全合规', href: '#contact', icon: 'shield-check' },
 
-      { label: '常见问题', href: '#' },
+      { label: '服务支持', href: 'mailto:support@goulong-ai.cn' },
 
     ],
 
@@ -83,13 +80,27 @@ const columns: FooterColumn[] = [
 
     links: [
 
-      { label: '400-888-0721', href: 'tel:400-888-0721', icon: 'phone' },
+      { label: 'support@goulong-ai.cn', href: 'mailto:support@goulong-ai.cn', icon: 'mail' },
 
-      { label: 'contact@jurong.ai', href: 'mailto:contact@jurong.ai', icon: 'mail' },
-
-      { label: '北京市 · 海淀区', href: '#', icon: 'map-pin' },
+      { label: '浙江省杭州市', href: '#', icon: 'map-pin' },
 
       { label: '工作日 9:00 – 18:00', href: '#', icon: 'clock' },
+
+    ],
+
+  },
+
+  {
+
+    title: '用户反馈',
+
+    links: [
+
+      { label: '飞书反馈群（待接入）', href: '#', icon: 'mail', disabled: true },
+
+      { label: '微信群入口（待接入）', href: '#', icon: 'phone', disabled: true },
+
+      { label: '邮箱反馈', href: 'mailto:support@goulong-ai.cn?subject=句龙用户反馈', icon: 'mail' },
 
     ],
 
@@ -103,13 +114,13 @@ const columns: FooterColumn[] = [
 
 <template>
 
-  <footer class="border-t border-hairline bg-[#02050b] pt-16 pb-10" id="footer">
+  <footer class="border-t border-hairline bg-[#02050b] py-10" id="contact">
 
     <div class="container-narrow">
 
-      <div class="grid grid-cols-1 md:grid-cols-[1.4fr_2.6fr_1fr] gap-12">
+      <div class="grid grid-cols-1 gap-8 xl:grid-cols-[1.1fr_3.3fr_0.75fr]">
 
-        <div class="flex flex-col gap-5">
+        <div class="flex flex-col gap-4">
 
           <BrandLogo size="lg" />
 
@@ -131,17 +142,34 @@ const columns: FooterColumn[] = [
 
 
 
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div class="grid grid-cols-2 gap-x-8 gap-y-6 md:grid-cols-3 xl:grid-cols-5">
 
-          <div v-for="col in columns" :key="col.title" class="flex flex-col gap-4">
+          <div v-for="col in columns" :key="col.title" class="flex flex-col gap-3">
 
             <h4 class="font-serif-cn text-sm font-semibold text-brand-gold tracking-wide">{{ col.title }}</h4>
 
-            <ul class="flex flex-col gap-2.5">
+            <ul class="flex flex-col gap-2">
 
               <li v-for="link in col.links" :key="link.label">
 
-                <a :href="link.href" class="font-sans-cn text-[13px] text-ink-mute hover:text-brand-gold transition-colors inline-flex items-center gap-1.5">
+                <span
+                  v-if="link.disabled"
+                  class="inline-flex cursor-not-allowed items-center gap-1.5 font-sans-cn text-[13px] text-ink-faint/80"
+                >
+
+                  <SvgIcon v-if="link.icon" :name="link.icon" :size="12" color="currentColor" />
+
+                  {{ link.label }}
+
+                </span>
+
+                <a
+                  v-else
+                  :href="link.href"
+                  :target="link.href.startsWith('http') ? '_blank' : undefined"
+                  :rel="link.href.startsWith('http') ? 'noopener noreferrer' : undefined"
+                  class="inline-flex items-center gap-1.5 font-sans-cn text-[13px] text-ink-mute transition-colors hover:text-brand-gold"
+                >
 
                   <SvgIcon v-if="link.icon" :name="link.icon" :size="12" color="currentColor" />
 
@@ -159,11 +187,11 @@ const columns: FooterColumn[] = [
 
 
 
-        <div class="flex flex-col items-center md:items-end gap-4">
+        <div class="flex flex-col items-center gap-3 md:items-end">
 
-          <div class="rounded-md border border-hairline bg-canvas p-3 shadow-glow-gold-sm">
+          <div class="rounded-md border border-hairline bg-canvas p-2.5 shadow-glow-gold-sm">
 
-            <svg width="108" height="108" viewBox="0 0 108 108" fill="none">
+            <svg width="96" height="96" viewBox="0 0 108 108" fill="none">
 
               <rect width="108" height="108" fill="#0a1020" />
 
@@ -232,19 +260,6 @@ const columns: FooterColumn[] = [
         </div>
 
       </div>
-
-
-
-      <div class="gradient-divider mt-14" />
-
-      <div class="flex flex-col md:flex-row items-center justify-between gap-2 mt-5 font-mono text-[10px] text-ink-faint tracking-wider">
-
-        <span>Build with care · Neo-Chinese Cyberpunk · 句龙·中枢</span>
-
-        <span>Made in Beijing · 2026</span>
-
-      </div>
-
     </div>
 
   </footer>

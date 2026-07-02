@@ -19,10 +19,10 @@ import SvgIcon from './SvgIcon.vue'
           <div class="flex flex-col gap-4 max-w-2xl">
             <span class="eyebrow text-glow-gold">让句龙成为企业业务流程的合规守门人</span>
             <h2 class="font-serif-cn text-2xl md:text-4xl font-semibold text-ink leading-snug">
-              一句话落地 · 全流程嵌入 · <span class="text-brand-gold text-glow-gold">数据不出域</span>
+              一句话落地 · 全流程嵌入 · <span class="text-brand-gold text-glow-gold">Agent 可调用</span>
             </h2>
             <p class="font-sans-cn text-sm md:text-base text-ink-soft/90 leading-relaxed">
-              从文档解析、风险识别到合规校验，句龙提供横向贯穿业务流的合规底座。让每一次签字都安心。
+              从文档编制、风险识别到合规校验，已上线产品支持通过 MCP / Skills / CLI 接入第三方智能体。
             </p>
           </div>
           <div class="flex flex-col sm:flex-row gap-4 shrink-0">
@@ -31,7 +31,7 @@ import SvgIcon from './SvgIcon.vue'
               <span>预约演示</span>
             </Button>
             <Button variant="outline-gold" size="lg">
-              <SvgIcon name="phone" :size="18" />
+              <SvgIcon name="mail" :size="18" />
               <span>联系销售</span>
             </Button>
           </div>
