@@ -118,7 +118,7 @@ const columns: FooterColumn[] = [
 
     <div class="container-narrow">
 
-      <div class="grid grid-cols-1 gap-8 xl:grid-cols-[1.1fr_3.3fr_0.75fr]">
+      <div class="grid grid-cols-1 gap-8 xl:grid-cols-[1.1fr_3.5fr]">
 
         <div class="flex flex-col gap-4">
 
@@ -144,7 +144,7 @@ const columns: FooterColumn[] = [
 
         <div class="grid grid-cols-2 gap-x-8 gap-y-6 md:grid-cols-3 xl:grid-cols-5">
 
-          <div v-for="col in columns" :key="col.title" class="flex flex-col gap-3">
+<div v-for="col in columns" :key="col.title" class="flex flex-col gap-3">
 
             <h4 class="font-serif-cn text-sm font-semibold text-brand-gold tracking-wide">{{ col.title }}</h4>
 
@@ -181,85 +181,85 @@ const columns: FooterColumn[] = [
 
             </ul>
 
+            <div v-if="col.title === '部署咨询'" class="mt-2 flex items-center gap-3 border-t border-hairline-soft pt-3">
+
+              <div class="rounded-md border border-hairline bg-canvas p-1.5 shadow-glow-gold-sm">
+
+                <svg width="72" height="72" viewBox="0 0 108 108" fill="none">
+
+                  <rect width="108" height="108" fill="#0a1020" />
+
+                  <g fill="#d4a85a">
+
+                    <rect x="10" y="10" width="22" height="22" />
+
+                    <rect x="76" y="10" width="22" height="22" />
+
+                    <rect x="10" y="76" width="22" height="22" />
+
+                    <rect x="14" y="14" width="14" height="14" fill="#0a1020" />
+
+                    <rect x="80" y="14" width="14" height="14" fill="#0a1020" />
+
+                    <rect x="14" y="80" width="14" height="14" fill="#0a1020" />
+
+                    <rect x="19" y="19" width="4" height="4" />
+
+                    <rect x="85" y="19" width="4" height="4" />
+
+                    <rect x="19" y="85" width="4" height="4" />
+
+                    <rect x="40" y="16" width="4" height="4" />
+
+                    <rect x="52" y="16" width="4" height="4" />
+
+                    <rect x="64" y="24" width="4" height="4" />
+
+                    <rect x="40" y="34" width="4" height="4" />
+
+                    <rect x="54" y="44" width="4" height="4" />
+
+                    <rect x="68" y="34" width="4" height="4" />
+
+                    <rect x="40" y="54" width="4" height="4" />
+
+                    <rect x="50" y="64" width="4" height="4" />
+
+                    <rect x="62" y="54" width="4" height="4" />
+
+                    <rect x="76" y="64" width="4" height="4" />
+
+                    <rect x="88" y="54" width="4" height="4" />
+
+                    <rect x="40" y="78" width="4" height="4" />
+
+                    <rect x="50" y="88" width="4" height="4" />
+
+                    <rect x="60" y="78" width="4" height="4" />
+
+                    <rect x="70" y="88" width="4" height="4" />
+
+                    <rect x="80" y="78" width="4" height="4" />
+
+                    <rect x="90" y="88" width="4" height="4" />
+
+                  </g>
+
+                </svg>
+
+              </div>
+
+              <span class="font-sans-cn text-[11px] leading-relaxed text-ink-mute">扫码关注「句龙」<br />获取更多资讯</span>
+
+            </div>
+
           </div>
 
         </div>
 
 
+</div>
 
-        <div class="flex flex-col items-center gap-3 md:items-end">
-
-          <div class="rounded-md border border-hairline bg-canvas p-2.5 shadow-glow-gold-sm">
-
-            <svg width="96" height="96" viewBox="0 0 108 108" fill="none">
-
-              <rect width="108" height="108" fill="#0a1020" />
-
-              <g fill="#d4a85a">
-
-                <rect x="10" y="10" width="22" height="22" />
-
-                <rect x="76" y="10" width="22" height="22" />
-
-                <rect x="10" y="76" width="22" height="22" />
-
-                <rect x="14" y="14" width="14" height="14" fill="#0a1020" />
-
-                <rect x="80" y="14" width="14" height="14" fill="#0a1020" />
-
-                <rect x="14" y="80" width="14" height="14" fill="#0a1020" />
-
-                <rect x="19" y="19" width="4" height="4" />
-
-                <rect x="85" y="19" width="4" height="4" />
-
-                <rect x="19" y="85" width="4" height="4" />
-
-                <rect x="40" y="16" width="4" height="4" />
-
-                <rect x="52" y="16" width="4" height="4" />
-
-                <rect x="64" y="24" width="4" height="4" />
-
-                <rect x="40" y="34" width="4" height="4" />
-
-                <rect x="54" y="44" width="4" height="4" />
-
-                <rect x="68" y="34" width="4" height="4" />
-
-                <rect x="40" y="54" width="4" height="4" />
-
-                <rect x="50" y="64" width="4" height="4" />
-
-                <rect x="62" y="54" width="4" height="4" />
-
-                <rect x="76" y="64" width="4" height="4" />
-
-                <rect x="88" y="54" width="4" height="4" />
-
-                <rect x="40" y="78" width="4" height="4" />
-
-                <rect x="50" y="88" width="4" height="4" />
-
-                <rect x="60" y="78" width="4" height="4" />
-
-                <rect x="70" y="88" width="4" height="4" />
-
-                <rect x="80" y="78" width="4" height="4" />
-
-                <rect x="90" y="88" width="4" height="4" />
-
-              </g>
-
-            </svg>
-
-          </div>
-
-          <span class="font-sans-cn text-xs text-ink-mute text-center md:text-right">关注「句龙」<br />获取更多资讯</span>
-
-        </div>
-
-      </div>
     </div>
 
   </footer>
