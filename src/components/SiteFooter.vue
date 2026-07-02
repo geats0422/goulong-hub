@@ -142,44 +142,48 @@ const columns: FooterColumn[] = [
 
 
 
-        <div class="grid grid-cols-2 gap-x-8 gap-y-6 md:grid-cols-3 xl:grid-cols-5">
+        <div class="grid grid-cols-2 gap-x-6 gap-y-6 md:grid-cols-5">
 
 <div v-for="col in columns" :key="col.title" class="flex flex-col gap-3">
 
-            <h4 class="font-serif-cn text-sm font-semibold text-brand-gold tracking-wide">{{ col.title }}</h4>
+            <div class="flex flex-col gap-3" :class="{ 'mt-auto': col.title === '联系合作' || col.title === '用户反馈' }">
 
-            <ul class="flex flex-col gap-2">
+              <h4 class="font-serif-cn text-sm font-semibold text-brand-gold tracking-wide">{{ col.title }}</h4>
 
-              <li v-for="link in col.links" :key="link.label">
+              <ul class="flex flex-col gap-2">
 
-                <span
-                  v-if="link.disabled"
-                  class="inline-flex cursor-not-allowed items-center gap-1.5 font-sans-cn text-[13px] text-ink-faint/80"
-                >
+                <li v-for="link in col.links" :key="link.label">
 
-                  <SvgIcon v-if="link.icon" :name="link.icon" :size="12" color="currentColor" />
+                  <span
+                    v-if="link.disabled"
+                    class="inline-flex cursor-not-allowed items-center gap-1.5 font-sans-cn text-[13px] text-ink-faint/80"
+                  >
 
-                  {{ link.label }}
+                    <SvgIcon v-if="link.icon" :name="link.icon" :size="12" color="currentColor" />
 
-                </span>
+                    {{ link.label }}
 
-                <a
-                  v-else
-                  :href="link.href"
-                  :target="link.href.startsWith('http') ? '_blank' : undefined"
-                  :rel="link.href.startsWith('http') ? 'noopener noreferrer' : undefined"
-                  class="inline-flex items-center gap-1.5 font-sans-cn text-[13px] text-ink-mute transition-colors hover:text-brand-gold"
-                >
+                  </span>
 
-                  <SvgIcon v-if="link.icon" :name="link.icon" :size="12" color="currentColor" />
+                  <a
+                    v-else
+                    :href="link.href"
+                    :target="link.href.startsWith('http') ? '_blank' : undefined"
+                    :rel="link.href.startsWith('http') ? 'noopener noreferrer' : undefined"
+                    class="inline-flex items-center gap-1.5 font-sans-cn text-[13px] text-ink-mute transition-colors hover:text-brand-gold"
+                  >
 
-                  {{ link.label }}
+                    <SvgIcon v-if="link.icon" :name="link.icon" :size="12" color="currentColor" />
 
-                </a>
+                    {{ link.label }}
 
-              </li>
+                  </a>
 
-            </ul>
+                </li>
+
+              </ul>
+
+            </div>
 
             <div v-if="col.title === '部署咨询'" class="mt-2 flex items-center gap-3 border-t border-hairline-soft pt-3">
 
