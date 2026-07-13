@@ -187,69 +187,9 @@ const columns: FooterColumn[] = [
 
             <div v-if="col.title === '部署咨询'" class="mt-2 flex items-center gap-3 border-t border-hairline-soft pt-3">
 
-              <div class="rounded-md border border-hairline bg-canvas p-1.5 shadow-glow-gold-sm">
+              <div class="rounded-md border border-hairline bg-white p-1.5 shadow-glow-gold-sm">
 
-                <svg width="72" height="72" viewBox="0 0 108 108" fill="none">
-
-                  <rect width="108" height="108" fill="#0a1020" />
-
-                  <g fill="#d4a85a">
-
-                    <rect x="10" y="10" width="22" height="22" />
-
-                    <rect x="76" y="10" width="22" height="22" />
-
-                    <rect x="10" y="76" width="22" height="22" />
-
-                    <rect x="14" y="14" width="14" height="14" fill="#0a1020" />
-
-                    <rect x="80" y="14" width="14" height="14" fill="#0a1020" />
-
-                    <rect x="14" y="80" width="14" height="14" fill="#0a1020" />
-
-                    <rect x="19" y="19" width="4" height="4" />
-
-                    <rect x="85" y="19" width="4" height="4" />
-
-                    <rect x="19" y="85" width="4" height="4" />
-
-                    <rect x="40" y="16" width="4" height="4" />
-
-                    <rect x="52" y="16" width="4" height="4" />
-
-                    <rect x="64" y="24" width="4" height="4" />
-
-                    <rect x="40" y="34" width="4" height="4" />
-
-                    <rect x="54" y="44" width="4" height="4" />
-
-                    <rect x="68" y="34" width="4" height="4" />
-
-                    <rect x="40" y="54" width="4" height="4" />
-
-                    <rect x="50" y="64" width="4" height="4" />
-
-                    <rect x="62" y="54" width="4" height="4" />
-
-                    <rect x="76" y="64" width="4" height="4" />
-
-                    <rect x="88" y="54" width="4" height="4" />
-
-                    <rect x="40" y="78" width="4" height="4" />
-
-                    <rect x="50" y="88" width="4" height="4" />
-
-                    <rect x="60" y="78" width="4" height="4" />
-
-                    <rect x="70" y="88" width="4" height="4" />
-
-                    <rect x="80" y="78" width="4" height="4" />
-
-                    <rect x="90" y="88" width="4" height="4" />
-
-                  </g>
-
-                </svg>
+                <img src="/goulong-wechat-qr.png" alt="句龙微信二维码" width="72" height="72" class="block h-[72px] w-[72px] rounded-sm" />
 
               </div>
 
