@@ -136,6 +136,10 @@ const columns: FooterColumn[] = [
 
             <a href="https://beian.miit.gov.cn" target="_blank" rel="noopener noreferrer" class="hover:text-brand-gold transition-colors">浙ICP备2026045389号-1</a>
 
+            <span class="mx-1 text-ink-faint">·</span>
+
+            <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33011002020045" target="_blank" rel="noopener noreferrer" class="hover:text-brand-gold transition-colors">浙公网安备33011002020045号</a>
+
           </div>
 
         </div>
